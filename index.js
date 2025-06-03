@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 2391 
 
 const collection_users = {};
 const EXPIRE_MS = 5 * 60 * 1000;
