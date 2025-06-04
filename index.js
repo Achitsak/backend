@@ -3,7 +3,7 @@ const app = express();
 const port = process.env.PORT || 2391 
 
 const collection_users = {};
-const EXPIRE_MS = 5 * 60 * 1000;
+const EXPIRE_MS = 10 * 60 * 1000;
 
 app.use(express.json());
 
@@ -61,7 +61,7 @@ setInterval(() => {
       delete collection_users[username];
     }
   }
-}, 60 * 1000); 
+}, 120 * 1000); 
 
 app.listen(port, () => {
   console.log(`✅ Server เริ่มแล้วที่ http://localhost:${port}`);
