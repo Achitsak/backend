@@ -9,7 +9,7 @@ app.use(express.json());
 
 app.post('/api/tracker', (req, res) => {
   const body = req.body;
-  const allowedKeys = ['username', 'placeid', 'jobid', 'gamename'];
+  const allowedKeys = ['username', 'placeid', 'jobid', 'gamename', 'executor'];
 
   const extraKeys = Object.keys(body).filter(k => !allowedKeys.includes(k));
   if (extraKeys.length > 0) {
@@ -30,6 +30,7 @@ app.post('/api/tracker', (req, res) => {
     placeid: body.placeid,
     jobid: body.jobid,
     gamename: body.gamename,
+    executor: body.executor,
     timestamp: Date.now()
   };
   console.log(`Added user ${body.username}`);
